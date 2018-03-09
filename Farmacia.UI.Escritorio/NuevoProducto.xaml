@@ -1,0 +1,86 @@
+﻿<Window x:Class="Farmacia.UI.Escritorio.NuevoProducto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Farmacia.UI.Escritorio"
+        mc:Ignorable="d"
+        Title="NuevoProducto" Height="665" Width="776">
+    <Grid Margin="0,0,2,2">
+        <Grid.Background>
+            <ImageBrush ImageSource="imagenes/farmaciaFondo.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="51"/>
+            <RowDefinition Height="auto" MinHeight="51"/>
+            <RowDefinition Height="auto" MinHeight="51"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Margin="23,8,0,20" FontSize="22" Foreground="#FF66B815">Nombre:</Label>
+        <Label Grid.Column="0" Grid.Row="1" Margin="0,0,0,28" FontSize="22" Foreground="#FF6DCB0F">Precio compra:</Label>
+        <Label Grid.Column="0" Grid.Row="2" Margin="10,0,0,28" FontSize="22" Foreground="#FF72CD17">Presentacion:</Label>
+        <Label Grid.Column="2" Grid.Row="0" Margin="10,13,0,15" FontSize="22" Foreground="#FF6CBF18">Descrepcion:</Label>
+        <Label Grid.Column="2" Grid.Row="1" Margin="10,0,0,28" FontSize="22" Foreground="#FF79E012">Precio venta:</Label>
+        <Label Grid.Column="2" Grid.Row="2" Margin="21,0,0,28" FontSize="22" Foreground="#FF60AA16">Categoria:</Label>
+        <TextBox x:Name="txbNombre" Grid.Column="1" Grid.Row="0" Margin="0,13,10,20" Background="#FF151515" Foreground="#FF45C914" FontSize="22"></TextBox>
+        <TextBox x:Name="txbPrecioCompra" Grid.Column="1" Grid.Row="1" Margin="0,0,10,33" Background="#FF1B1A1A" Foreground="#FF4ABB20" FontSize="22"></TextBox>
+        <TextBox x:Name="txbPresentacion" Grid.Column="1" Grid.Row="2" Margin="0,0,10,33" Background="#FF0F0E0E" Foreground="#FF48BD1C" FontSize="22"></TextBox>
+        <TextBox x:Name="txbDescripcion" Grid.Column="3" Grid.Row="0" Margin="0,13,10,20" Background="#FF1F1D1D" Foreground="#FF50C922" FontSize="22"></TextBox>
+        <TextBox x:Name="txbPrecioVenta" Grid.Column="3" Grid.Row="1" Margin="0,3,10,30" Background="#FF151313" Foreground="#FF4DBF22" FontSize="22"></TextBox>
+        <TextBox x:Name="txbCategoria" Grid.Column="3" Grid.Row="2" Margin="0,0,10,33" Background="#FF1F1D1D" Foreground="#FF24B915" FontSize="22"></TextBox>
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="3" Margin="97,0,46,154" Grid.RowSpan="2" FontSize="8" Foreground="#FF20D330" Click="btnNuevo_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/nuevo.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEditar" Grid.Row="3" Margin="146,0,181,154" Grid.RowSpan="2" FontSize="8" Foreground="#FF25D435" Grid.ColumnSpan="2" Click="btnEditar_Click" Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/editar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="3" Margin="10,0,127,154" Grid.RowSpan="2" FontSize="8" Foreground="#FF1DBD2B" Click="btnGuardar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/guardar.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="3" Margin="64,0,74,154" Grid.RowSpan="2" FontSize="8" Foreground="#FF29C737" Click="btnEliminar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/eliminar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="2" Margin="117,66,23,154" RenderTransformOrigin="0.5,0.5" Click="btnCancelar_Click" Grid.RowSpan="3">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/cancelar.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtgProductos" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" Margin="41,81,37,116" Grid.RowSpan="2" SelectionChanged="dtgProductos_SelectionChanged" Foreground="#FF40B912">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF573D3D" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+        </DataGrid>
+        <Button x:Name="btnRegresar" Grid.Column="2" Grid.Row="5" Margin="146,172,0,0" Grid.ColumnSpan="2" Click="btnRegresar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/regresar.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
